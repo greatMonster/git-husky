@@ -19,7 +19,8 @@
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3"
+    "eslint-plugin-vue": "^8.0.3",
+    "husky": "^7.0.4"
   },
   "eslintConfig": {
     "root": true,
@@ -40,5 +41,12 @@
     "last 2 versions",
     "not dead",
     "not ie 11"
-  ]
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "echo 我要提交代码啦",
+      "commit-msg": "echo $HUSKY_GIT_PARAMS $HUSKY_GIT_STDIN",
+      "pre-push": "echo 提交代码前需要先进行单元测试 && npn test"
+    }
+  }
 }
